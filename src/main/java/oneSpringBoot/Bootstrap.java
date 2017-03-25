@@ -48,7 +48,6 @@ public class Bootstrap  extends SpringBootServletInitializer implements Embedded
 	@Override
 	public void customize(ConfigurableEmbeddedServletContainer arg0) {
 		arg0.setPort(8081);
-		
 	}
 
 }

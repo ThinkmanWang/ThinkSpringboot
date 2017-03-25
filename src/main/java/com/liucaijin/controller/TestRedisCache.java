@@ -6,7 +6,10 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.core.HashOperations;
+import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,15 +37,15 @@ public class TestRedisCache {
 	   
 	   HashOperations opsForHash = redisTemplate.opsForHash();
 	   Object object = opsForHash.get("liucaijin".getBytes(), "123".getBytes());
-//	   redisTemplate.execute(new RedisCallback<Boolean>() {
-//
-//		@Override
-//		public Boolean doInRedis(RedisConnection connection) throws DataAccessException {
-//			connection.hMSet("liucaijin".getBytes(), map); 
-//			return true;
-//		}
-//		   
-//	});
+	   redisTemplate.execute(new RedisCallback<Boolean>() {
+
+		@Override
+		public Boolean doInRedis(RedisConnection connection) throws DataAccessException {
+			connection.hMSet("liucaijin".getBytes(), map);
+			return true;
+		}
+
+	});
 	   return "ok";
    }
    

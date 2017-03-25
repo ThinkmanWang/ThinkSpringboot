@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
  
 public interface QuerySelect {
 	
-	@Select("select count(*) from SecuMain")
+	@Select("select count(*) from notes")
 	public int queryCount();
      
 }
