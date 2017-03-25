@@ -27,7 +27,7 @@ public class TestRedisCache {
    RedisTemplate redisTemplate;
    
    @SuppressWarnings("unchecked")
-@RequestMapping("/test")
+	@RequestMapping("/test")
    public String getSubResult(){
 //	   iredisService.sub2(1, 2);
 //	   iredisService.sub2(2, 1);
