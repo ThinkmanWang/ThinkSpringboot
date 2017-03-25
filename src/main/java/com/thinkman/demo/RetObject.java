@@ -1,4 +1,4 @@
-package com.thinkman.notes;
+package com.thinkman.demo;
 
 /**
  * Created by wangx on 2017-02-27.

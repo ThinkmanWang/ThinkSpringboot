@@ -1,4 +1,4 @@
-package com.thinkman.notes.models;
+package com.thinkman.demo.models;
 
 /**
  * Created by wangx on 2017-02-27.

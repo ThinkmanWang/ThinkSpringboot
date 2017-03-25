@@ -1,9 +1,9 @@
-package com.thinkman.notes.controllers;
+package com.thinkman.demo.controllers;
 
 import com.google.gson.Gson;
-import com.thinkman.notes.RetObject;
-import com.thinkman.notes.mapper.UserMapper;
-import com.thinkman.notes.models.User;
+import com.thinkman.demo.RetObject;
+import com.thinkman.demo.mapper.UserMapper;
+import com.thinkman.demo.models.User;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

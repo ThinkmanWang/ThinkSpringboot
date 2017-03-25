@@ -1,6 +1,6 @@
-package com.thinkman.notes.mapper;
+package com.thinkman.demo.mapper;
 
-import com.thinkman.notes.models.User;
+import com.thinkman.demo.models.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
