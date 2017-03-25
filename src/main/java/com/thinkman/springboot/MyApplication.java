@@ -9,7 +9,10 @@ import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomi
 import org.springframework.boot.context.embedded.EmbeddedWebApplicationContext;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.core.task.TaskExecutor;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -46,6 +49,15 @@ public class MyApplication extends SpringBootServletInitializer implements Embed
 	@Override
 	public void customize(ConfigurableEmbeddedServletContainer arg0) {
 		arg0.setPort(8081);
+	}
+
+	@Bean(name = "taskExecutor")
+	public TaskExecutor taskExecutor() {
+		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+		executor.setCorePoolSize(50);
+		executor.setMaxPoolSize(150);
+		executor.setQueueCapacity(10240);
+		return executor;
 	}
 
 }
