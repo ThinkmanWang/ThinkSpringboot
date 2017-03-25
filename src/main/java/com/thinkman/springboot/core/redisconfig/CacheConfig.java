@@ -53,6 +53,7 @@ public class CacheConfig extends CachingConfigurerSupport {
 			}
 		};
 	}
+
 	@Bean
 	public JedisConnectionFactory jedisConnectionFactory(){
 		JedisConnectionFactory factory=new JedisConnectionFactory();
