@@ -18,19 +18,20 @@ import com.liucaijin.cache.CacheUtil4Hash;
 import com.liucaijin.cache.ICacheKey;
 import com.liucaijin.domain.User;
 import com.liucaijin.service.IredisService;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class TestRedisCache {
+public class TestRedisHsetCache {
    @Autowired
    IredisService iredisService;
    @Autowired
    RedisTemplate redisTemplate;
    
    @SuppressWarnings("unchecked")
-	@RequestMapping("/test")
+   @RequestMapping("/test")
+   @ResponseBody
    public String getSubResult(){
-//	   iredisService.sub2(1, 2);
-//	   iredisService.sub2(2, 1);
+
 	   Map<byte[],byte[]> map=new  HashMap<byte[],byte[]>();
 	   
 	   map.put("123".getBytes(), "123".getBytes());
@@ -39,17 +40,18 @@ public class TestRedisCache {
 	   Object object = opsForHash.get("liucaijin".getBytes(), "123".getBytes());
 	   redisTemplate.execute(new RedisCallback<Boolean>() {
 
-		@Override
-		public Boolean doInRedis(RedisConnection connection) throws DataAccessException {
-			connection.hMSet("liucaijin".getBytes(), map);
-			return true;
-		}
+		   @Override
+		   public Boolean doInRedis(RedisConnection connection) throws DataAccessException {
+			   connection.hMSet("liucaijin".getBytes(), map);
+			   return true;
+		   }
 
-	});
+	   });
 	   return "ok";
    }
    
    @RequestMapping("/test2")
+   @ResponseBody
    public String redisTest(){
 	   List<User> users=new ArrayList<>();
 	   users.add(new User(1,11));
@@ -60,7 +62,6 @@ public class TestRedisCache {
 
 		@Override
 		public String getCacheKey(User t) {
-			
 			return t.getId()+"";
 		}
 	});
@@ -68,6 +69,7 @@ public class TestRedisCache {
    }
    
    @RequestMapping("/test3")
+   @ResponseBody
    public String redisTest2(){
 	   List<User> users=new ArrayList<>();
 	   List<String> keys=new ArrayList<>();

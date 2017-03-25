@@ -28,17 +28,6 @@ public class MyApplication extends SpringBootServletInitializer implements Embed
 	@Autowired
 	QuerySelect querySelect;
 
-//	static {
-//		try{
-//			// 初始化log4j
-//			String log4jPath = "";
-//			log4jPath = MyApplication.class.getClassLoader().getResource("").getPath()+"log4j.properties";
-//			PropertyConfigurator.configure(log4jPath);
-//		}catch (Exception e){
-//			System.out.println(e.getMessage());
-//		}
-//	}
-
 	private static Logger logger = Logger.getLogger(MyApplication.class);
 
 
@@ -55,11 +44,9 @@ public class MyApplication extends SpringBootServletInitializer implements Embed
         if (context instanceof EmbeddedWebApplicationContext) {
             int port = ((EmbeddedWebApplicationContext) context).getEmbeddedServletContainer().getPort();
             String contextPath = context.getApplicationName();
-            String url = String.format(Locale.US, "http://localhost:%d%s", port, contextPath);
-            System.out.println("url: " + url);
-
+//            String url = String.format(Locale.US, "http://localhost:%d%s", port, contextPath);
+//            System.out.println("url: " + url);
         }
-		 
 	}
 
 	@Override
