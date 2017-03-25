@@ -12,6 +12,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.task.TaskExecutor;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,7 @@ import com.thinkman.springboot.mapper.QuerySelect;
 @Controller
 @ComponentScan("com.thinkman")
 @EnableAutoConfiguration
+@EnableScheduling
 public class MyApplication extends SpringBootServletInitializer implements EmbeddedServletContainerCustomizer{
 
 	@Autowired
