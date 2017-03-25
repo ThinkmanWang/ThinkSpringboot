@@ -1,4 +1,4 @@
-package com.liucaijin.cache.utils;
+package com.thinkman.springboot.cache.utils;
 
  
 import org.apache.commons.codec.binary.StringUtils;

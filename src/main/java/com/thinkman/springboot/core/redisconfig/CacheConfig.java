@@ -1,10 +1,11 @@
-package com.liucaijin.core.redisconfig;
+package com.thinkman.springboot.core.redisconfig;
 
 import java.lang.reflect.Method;
 
+import com.thinkman.springboot.cache.utils.KeyRedisSerializer;
+import com.thinkman.springboot.cache.utils.ServerRedisSerializer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.CacheManager;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.interceptor.KeyGenerator;
@@ -20,8 +21,6 @@ import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.liucaijin.cache.utils.KeyRedisSerializer;
-import com.liucaijin.cache.utils.ServerRedisSerializer;
 
 @Configuration
 @PropertySource(value = "application.properties")

@@ -1,9 +1,8 @@
-package com.liucaijin.dao;
+package com.thinkman.springboot.mapper;
 
 import org.apache.ibatis.annotations.Select;
-import org.springframework.stereotype.Component;
 
- 
+
 public interface QuerySelect {
 	
 	@Select("select count(*) from notes")

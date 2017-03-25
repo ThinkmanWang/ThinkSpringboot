@@ -1,4 +1,4 @@
-package com.liucaijin.cache.utils;
+package com.thinkman.springboot.cache.utils;
 
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.SerializationException;

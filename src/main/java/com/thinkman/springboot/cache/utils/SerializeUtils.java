@@ -1,4 +1,4 @@
-package com.liucaijin.cache.utils;
+package com.thinkman.springboot.cache.utils;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

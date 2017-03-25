@@ -1,4 +1,4 @@
-package com.liucaijin.domain;
+package com.thinkman.springboot.domain;
 
 import java.io.Serializable;
 

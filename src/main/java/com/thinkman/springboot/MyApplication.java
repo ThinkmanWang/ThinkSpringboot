@@ -1,10 +1,6 @@
-package oneSpringBoot;
-
-import java.util.Locale;
+package com.thinkman.springboot;
 
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
-import org.apache.tomcat.util.bcel.classfile.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -18,10 +14,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.liucaijin.dao.QuerySelect;
+import com.thinkman.springboot.mapper.QuerySelect;
 
 @Controller
-@ComponentScan("com.liucaijin")
+@ComponentScan("com.thinkman")
 @EnableAutoConfiguration
 public class MyApplication extends SpringBootServletInitializer implements EmbeddedServletContainerCustomizer{
 
@@ -44,8 +40,6 @@ public class MyApplication extends SpringBootServletInitializer implements Embed
         if (context instanceof EmbeddedWebApplicationContext) {
             int port = ((EmbeddedWebApplicationContext) context).getEmbeddedServletContainer().getPort();
             String contextPath = context.getApplicationName();
-//            String url = String.format(Locale.US, "http://localhost:%d%s", port, contextPath);
-//            System.out.println("url: " + url);
         }
 	}
 

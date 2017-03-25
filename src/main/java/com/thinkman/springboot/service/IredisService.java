@@ -1,6 +1,6 @@
-package com.liucaijin.service;
+package com.thinkman.springboot.service;
 
-import com.liucaijin.domain.User;
+import com.thinkman.springboot.domain.User;
 
 public interface IredisService {
    public   String sub(int a,int b);

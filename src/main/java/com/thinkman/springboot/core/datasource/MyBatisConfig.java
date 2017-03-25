@@ -1,7 +1,6 @@
-package com.liucaijin.core.datasource;
+package com.thinkman.springboot.core.datasource;
 
  
-import org.apache.tomcat.jdbc.pool.DataSource;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,7 +11,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 @Configuration
-@MapperScan("com.liucaijin.dao")
+@MapperScan("com.thinkman")
 public class MyBatisConfig {
 	@Autowired
 	private JdbcConfig jdbcConfig;

@@ -1,4 +1,4 @@
-package com.liucaijin.core.datasource;
+package com.thinkman.springboot.core.datasource;
 
 import javax.sql.DataSource;
 
@@ -20,7 +20,7 @@ public class SessionFactoryConfig {
    @Autowired
    private DataSource dataSource;
    
-   private String typeAliasPackage="com.liucaijin.domain";
+   private String typeAliasPackage="com.thinkman";
    
    /** 
     *创建sqlSessionFactoryBean 实例     

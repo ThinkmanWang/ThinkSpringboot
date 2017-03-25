@@ -1,10 +1,10 @@
-package com.liucaijin.serviceimpl;
+package com.thinkman.springboot.serviceimpl;
 
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
-import com.liucaijin.domain.User;
-import com.liucaijin.service.IredisService;
+import com.thinkman.springboot.domain.User;
+import com.thinkman.springboot.service.IredisService;
 
 @Service
 public class RedisServiceImpl implements IredisService {

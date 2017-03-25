@@ -1,4 +1,4 @@
-package com.liucaijin.cache;
+package com.thinkman.springboot.cache;
 
 import java.util.ArrayList;
 import java.util.HashMap;

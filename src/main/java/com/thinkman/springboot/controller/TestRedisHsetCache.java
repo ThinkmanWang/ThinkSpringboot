@@ -1,10 +1,11 @@
-package com.liucaijin.controller;
+package com.thinkman.springboot.controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.thinkman.springboot.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisConnection;
@@ -14,10 +15,9 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.liucaijin.cache.CacheUtil4Hash;
-import com.liucaijin.cache.ICacheKey;
-import com.liucaijin.domain.User;
-import com.liucaijin.service.IredisService;
+import com.thinkman.springboot.cache.CacheUtil4Hash;
+import com.thinkman.springboot.cache.ICacheKey;
+import com.thinkman.springboot.service.IredisService;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
