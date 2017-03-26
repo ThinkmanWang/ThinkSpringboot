@@ -4,9 +4,11 @@ import com.google.gson.Gson;
 import com.thinkman.demo.RetObject;
 import com.thinkman.demo.mapper.UserMapper;
 import com.thinkman.demo.models.User;
+import com.thinkman.springboot.core.redisconfig.RedisUtil;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,6 +24,9 @@ public class UserController {
 
     @Autowired
     private UserMapper mUserMapper;
+
+    @Autowired
+    private RedisUtil mRedisUtils;
 
     private Logger logger = Logger.getLogger(UserController.class);
 
@@ -48,6 +53,8 @@ public class UserController {
         } else {
             logger.error("User is null");
         }
+
+        mRedisUtils.set("fxxk_fxxxxxxk", "123");
 
         return new Gson().toJson(ret);
     }

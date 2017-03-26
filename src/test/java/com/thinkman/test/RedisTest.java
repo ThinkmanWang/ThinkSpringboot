@@ -23,8 +23,6 @@ public class RedisTest {
 
     private Logger logger = Logger.getLogger(DateTimeTest.class);
 
-    @Autowired
-    private JedisPool jedisPool;
 
     @Test
     @Rollback
