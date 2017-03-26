@@ -42,4 +42,8 @@ public class RedisServiceForSet {
     public void deleteItem(String szKey, String... szValues) {
         redisTemplate.opsForSet().remove(szKey, szValues);
     }
+
+    public long size(String szKey) {
+        return redisTemplate.opsForSet().size(szKey);
+    }
 }
