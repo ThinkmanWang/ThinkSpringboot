@@ -15,14 +15,14 @@ import javax.servlet.http.HttpServletRequest;
  */
 @RestController
 @EnableAutoConfiguration
-public class HelloContriller {
+public class RedisContriller {
 
-    private Logger logger = Logger.getLogger(HelloContriller.class);
+    private Logger logger = Logger.getLogger(RedisContriller.class);
 
     @Autowired
     RedisService mRedisService;
 
-    @RequestMapping(value="/hello.do", method={RequestMethod.POST, RequestMethod.GET})
+    @RequestMapping(value="/redis.do", method={RequestMethod.POST, RequestMethod.GET})
     public String login(HttpServletRequest request) {
         mRedisService.insertSet("config_info", "123", "456", "789");
         return "success";
