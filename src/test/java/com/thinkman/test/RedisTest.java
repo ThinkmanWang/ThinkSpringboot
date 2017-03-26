@@ -1,6 +1,7 @@
 package com.thinkman.test;
 
 import com.thinkman.springboot.MyApplication;
+import com.thinkman.springboot.service.RedisService;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,7 +23,6 @@ import redis.clients.jedis.JedisPool;
 public class RedisTest {
 
     private Logger logger = Logger.getLogger(DateTimeTest.class);
-
 
     @Test
     @Rollback

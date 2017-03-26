@@ -28,6 +28,10 @@ public class RedisService {
         redisTemplate.delete(key);
     }
 
+    public boolean hasKey(String szKey) {
+        return redisTemplate.hasKey(szKey);
+    }
+
     public <V> V query (String key) {
         return (V)redisTemplate.opsForValue().get(key);
     }
