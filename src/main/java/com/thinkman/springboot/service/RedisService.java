@@ -47,13 +47,4 @@ public class RedisService {
     public void setRedisTemplate(RedisTemplate redisTemplate) {
         this.redisTemplate = redisTemplate;
     }
-
-    public void insertSet(String szKey, String szVal) {
-        redisTemplate.opsForSet().add(szKey, szVal);
-    }
-
-    public void insertSet(String szKey, String... szVals) {
-        SetOperations<String, String> operations = redisTemplate.opsForSet();
-        operations.add(szKey, szVals);
-    }
 }

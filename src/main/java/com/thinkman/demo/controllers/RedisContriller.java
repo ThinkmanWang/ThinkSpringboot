@@ -1,6 +1,7 @@
 package com.thinkman.demo.controllers;
 
 import com.thinkman.springboot.service.RedisService;
+import com.thinkman.springboot.service.RedisServiceForSet;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -20,11 +21,11 @@ public class RedisContriller {
     private Logger logger = Logger.getLogger(RedisContriller.class);
 
     @Autowired
-    RedisService mRedisService;
+    RedisServiceForSet mRedisService;
 
     @RequestMapping(value="/redis.do", method={RequestMethod.POST, RequestMethod.GET})
     public String login(HttpServletRequest request) {
         mRedisService.insertSet("config_info", "123", "456", "789", "135", "246");
-        return "success";
+        return "success pop: " + mRedisService.popOne("config_info");
     }
 }
