@@ -2,8 +2,6 @@ package com.thinkman.springboot.core.redisconfig;
 
 import java.lang.reflect.Method;
 
-import com.thinkman.springboot.cache.utils.KeyRedisSerializer;
-import com.thinkman.springboot.cache.utils.ServerRedisSerializer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
@@ -37,22 +35,22 @@ public class CacheConfig extends CachingConfigurerSupport {
     @Value("${spring.redis.database}")
 	private int db;
 	
-	@Bean
-	public KeyGenerator wiselyKeyGenerator(){
-		return new KeyGenerator() {
-			
-			@Override
-			public Object generate(Object arg0, Method arg1, Object... arg2) {
-				StringBuilder sb=new StringBuilder();
-				sb.append(arg0.getClass().getName());
-				sb.append(arg1.getName());
-				for(Object obj:arg2){
-					sb.append(obj.toString());
-				}
-				return sb.toString();
-			}
-		};
-	}
+//	@Bean
+//	public KeyGenerator wiselyKeyGenerator(){
+//		return new KeyGenerator() {
+//
+//			@Override
+//			public Object generate(Object arg0, Method arg1, Object... arg2) {
+//				StringBuilder sb=new StringBuilder();
+//				sb.append(arg0.getClass().getName());
+//				sb.append(arg1.getName());
+//				for(Object obj:arg2){
+//					sb.append(obj.toString());
+//				}
+//				return sb.toString();
+//			}
+//		};
+//	}
 
 	@Bean
 	public JedisConnectionFactory jedisConnectionFactory(){
@@ -87,13 +85,5 @@ public class CacheConfig extends CachingConfigurerSupport {
 		om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
 		om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
 		jackson2JsonRedisSerializer.setObjectMapper(om);
-		template.setKeySerializer(new KeyRedisSerializer());
-		template.setValueSerializer(new ServerRedisSerializer());
-		template.setHashKeySerializer(new KeyRedisSerializer());
-		template.setHashValueSerializer(new ServerRedisSerializer());
-//		template.setHashKeySerializer(jackson2JsonRedisSerializer);
-//		template.setHashValueSerializer(jackson2JsonRedisSerializer);
-		//ObjectMapper mapper = new ObjectMapper().setVisibility(JsonMethod.FIELD, Visibility.ANY);
-	    //mapper.configure(DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 	}
 }

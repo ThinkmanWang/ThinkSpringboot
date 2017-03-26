@@ -18,7 +18,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.thinkman.springboot.mapper.QuerySelect;
 
 @Controller
 @ComponentScan("com.thinkman")
@@ -26,8 +25,6 @@ import com.thinkman.springboot.mapper.QuerySelect;
 @EnableScheduling
 public class MyApplication extends SpringBootServletInitializer implements EmbeddedServletContainerCustomizer{
 
-	@Autowired
-	QuerySelect querySelect;
 
 	private static Logger logger = Logger.getLogger(MyApplication.class);
 
@@ -35,7 +32,6 @@ public class MyApplication extends SpringBootServletInitializer implements Embed
 	@RequestMapping("/")
 	@ResponseBody
 	String home() {
-		System.out.println(":::::::::"+querySelect.queryCount());
 		logger.info("Hello World!!!");
 		return "Hello World!";
 	}

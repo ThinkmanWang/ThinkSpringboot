@@ -20,6 +20,10 @@ public class RedisService {
         redisTemplate.opsForValue().set(key, value);
     }
 
+    public void save(String key, String value, long nExpire) {
+        redisTemplate.opsForValue().set(key, value, nExpire);
+    }
+
     public void delete (String key) {
         redisTemplate.delete(key);
     }

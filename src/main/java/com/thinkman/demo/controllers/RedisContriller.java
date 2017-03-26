@@ -24,7 +24,7 @@ public class RedisContriller {
 
     @RequestMapping(value="/redis.do", method={RequestMethod.POST, RequestMethod.GET})
     public String login(HttpServletRequest request) {
-        mRedisService.insertSet("config_info", "123", "456", "789");
+        mRedisService.insertSet("config_info", "123", "456", "789", "135", "246");
         return "success";
     }
 }
